@@ -13,5 +13,6 @@ namespace LightBucks.Repositories
         public void AddSnack(Snack snack);
         public void UpdateSnack(Snack snack);
         public void DeleteSnack(int id);
+       
     }
 }
