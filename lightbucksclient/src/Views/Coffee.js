@@ -19,7 +19,7 @@ export default function Coffee() {
     <div className="body">
       <img
         className="img"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/1200px-A_small_cup_of_coffee.JPG"
+        src=""
         alt="coffee-img"
       />
       <div className="title">
@@ -31,7 +31,7 @@ export default function Coffee() {
           {coffees.map((coffee) => (
             <CoffeeCard
               key={coffee.id}
-              setListings={setCoffees}
+              setCoffees={setCoffees}
               coffee={coffee}
             />
           ))}

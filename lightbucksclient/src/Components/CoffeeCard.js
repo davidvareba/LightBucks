@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { CardImg } from 'reactstrap';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Button } from 'reactstrap';
 import { deleteCoffee, updateCoffee } from '../Data/CoffeeData';
@@ -11,7 +10,6 @@ export default function CoffeeCard({ coffee, setCoffee }) {
   const handleChange = (event) => {
     setChecked(!checked);
     const favcoffee = {
-      firebaseKey: coffee.firebaseKey,
       name: coffee.make,
       descriptions: coffee.descriptions,
       price: coffee.price,
@@ -48,17 +46,10 @@ export default function CoffeeCard({ coffee, setCoffee }) {
             />
             Like this Coffee?
           </label>
-          <Link
-              type="button"
-              className="btn btn-primary"
-              to={`/coffee/${coffee.id}`}
-            >
-              Details
-        </Link>
           <div className="d-grid gap-2 mt-3">
-            <Link to={`/edit/${coffee.firebaseKey}`} className="btn btn-warning btn-block">
+            <Button to={`/edit/${coffee.firebaseKey}`} className="btn btn-warning btn-block">
               Edit Coffee
-            </Link>
+            </Button>
             <Button
               onClick={() => handleClick('delete')}
               className="btn btn-danger"

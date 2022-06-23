@@ -5,7 +5,7 @@ import React from "react";
 export default function Contact() {
     return (
         <div className="body">
-            <img src='https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/ContactViewImageCr.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvQ29udGFjdFZpZXdJbWFnZUNyLnBuZyIsImlhdCI6MTY1MTI2NDU0NiwiZXhwIjoxOTY2NjI0NTQ2fQ.pJkuh_i7oUZjcQ8Qz2OY_uYWdjlGYAze9aR6YLm5OoQ' alt="nashville skyline" className="img" />
+            <img src='https://cdn.vox-cdn.com/thumbor/fJZu4t68AeJy9cgQfHOEmUXHIt8=/0x0:2000x1346/1200x900/filters:focal(840x513:1160x833)/cdn.vox-cdn.com/uploads/chorus_image/image/59321669/untitled_5492_HDR.40.jpg' alt="contactImg" className="contactImg" />
             <div className="title">
                 Contact Us
                 <hr className="hr" />
