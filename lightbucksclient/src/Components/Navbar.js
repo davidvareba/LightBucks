@@ -8,7 +8,7 @@ export default function Navbar() {
         <div>
             <nav variant="tabs" className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <Link className="navbar-brand fas fa-home" to="/home">
+                    <Link className="navbar-brand fas fa-home" to="/">
                         Home
                     </Link>
                     <button

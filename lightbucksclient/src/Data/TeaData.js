@@ -13,7 +13,7 @@ const getTea = () =>
 const getTeaById = (id) =>
   new Promise((resolve, reject) => {
     axios
-      .get(`${baseUrl}/teas/teas/user/${id}`)
+      .get(`${baseUrl}/Teateas/${id}`)
       .then((response) => resolve(Object.values(response.data)))
       .catch(reject);
   });
@@ -21,14 +21,14 @@ const getTeaById = (id) =>
 const createTea = (teaObj) => 
  new Promise((resolve, reject) => {
    axios
-    .post(`${baseUrl}/teas`, teaObj)
+    .post(`${baseUrl}/Teas`, teaObj)
     .then((response) => resolve(response.data))
     .catch(reject);
  })
   const getTeaByUserUid = (uid) =>
   new Promise((resolve, reject) => {
     axios
-      .get(`${baseUrl}/tea/tea/user/${uid}`)
+      .get(`${baseUrl}/Tea/user/${uid}`)
       .then((response) => resolve(Object.values(response.data)))
       .catch(reject);
   });
@@ -37,9 +37,16 @@ const deleteTea = (id) =>
   new Promise((resolve, reject) => {
     console.warn(baseUrl);
     axios
-      .delete(`${baseUrl}/teas/teas/${id}`)
+      .delete(`${baseUrl}/Teas/${id}`)
       .then(() => getTea().then(resolve))
       .catch(reject);
   });
 
-export { getTea, getTeaById, createTea, deleteTea, getTeaByUserUid };
+const updateTea = (teaObj) => 
+  new Promise((resolve, reject) => {
+    axios
+     .patch(`${baseUrl}/Tea`, teaObj)
+     .then((response) => resolve(response.data))
+     .catch(reject);
+  })
+export { getTea, getTeaById, createTea, deleteTea, getTeaByUserUid, updateTea};

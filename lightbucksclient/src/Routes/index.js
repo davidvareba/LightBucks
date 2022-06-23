@@ -1,26 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route, Switch } from 'react-router-dom';
-import About from '../views/About';
-import Coffee from '../views/Coffee';
-import Snack from '../views/Snack';
-import Tea from '../views/Tea';
-import Detail from '../views/Detail';
-import Edit from '../views/Edit';
-import Favorite from '../views/Favorite';
-import Contact from '../components/Contact';
+import { Route, Routes as Routing } from 'react-router-dom';
+import About from '../Views/About';
+import Coffee from '../Views/Coffee';
+import Snack from '../Views/Snack';
+import Tea from '../Views/Tea';
+import Edit from '../Views/Edit';
+import Favorite from '../Views/Favorite';
+import Contact from '../Views/Contact';
 
 export default function Routes({ userId }) {
   return (
-    <div>
-      <Switch>
-        console.warn({userId});
-        <Route exact path="/about" component={() => <About userId={userId} />} />
-        <Route exact path="/coffees" component={() => <Coffee userId={userId} />} />
-        <Route exact path="/teas" component={() => <Tea userId={userId} />} />
-        <Route exact path="/snacks" component={() => <Snack userId={userId} />} />
-        <Route exact path="/contact" component={() => <Contact userId={userId} />} />
-        <Route exact path="/detail/:firebaseKey" component={Detail} />
+    <Routing>
+        <Route path="/about" element={ <About />} />
+        <Route path="/coffees" element={ <Coffee  />} />
+        <Route path="/teas" element={ <Tea  />} />
+        <Route path="/snacks" element={ <Snack  />} />
+        <Route path="/contact" element={ <Contact  />} />
         <Route
           exact
           path="/edit/:firebaseKey"
@@ -31,8 +27,7 @@ export default function Routes({ userId }) {
           path="/favorite"
           component={() => <Favorite userId={userId} />}
         />
-      </Switch>
-    </div>
+    </Routing>
   );
 }
 

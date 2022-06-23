@@ -42,4 +42,11 @@ const deleteSnack = (id) =>
       .catch(reject);
   });
 
-export { getSnack, getSnackById, createSnack, deleteSnack, getSnackByUserUid };
+const updateSnack = (snackObj) => 
+  new Promise((resolve, reject) => {
+    axios
+     .patch(`${baseUrl}/snacks`, snackObj)
+     .then((response) => resolve(response.data))
+     .catch(reject);
+  })
+export { getSnack, getSnackById, createSnack, deleteSnack, getSnackByUserUid, updateSnack };
